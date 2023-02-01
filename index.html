@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="knightsTour.css" rel="stylesheet">
+    <script src="knightsTour.js" type="module"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- <link rel="icon" href="lotus.png"> -->
+    <title>knightsTour</title>
+</head>
+
+<body>
+    <div id="canvas-div">
+        <canvas id="board-canvas"></canvas>
+        <canvas id="main-canvas"></canvas>
+    </div>
+    <div id="explanation-div">
+        <p id="explanation-text">This is a visualiser for the mathematical puzzle of the Knight's Tour. The knight must
+            visit each square of the chessboard exactly once to complete the tour. My algorithm uses Warnsdorff's
+            heuristic alongside the additions made by
+            mathematician Douglas Squirrel to complete the tour for all the board sizes available here (and more).
+            If you want to try the tour yourself, see this link:
+            <a href="https://www.maths-resources.com/knights/">https://www.maths-resources.com/knights/</a>.
+        </p>
+        <button id="flavour-text-button"></button>
+        <p id="flavour-text" class="flavour-text-invisible">Sir Tristram wants to visit his paramour, Isolde; but her husband, the evil King Mark,
+            orders that he can only see her if he passes through all of King Mark's fiefs once and only once on the way,
+            and that on a hobbled horse that will not move in a straight line. Can Sir Tristram achieve this gallant
+            feat
+            and be reunited with his beloved?</p>
+    </div>
+    <div id="container-div" class="is-not-slid-out">
+        <div id="options-div">
+            <p id="x-reader">x:5</p>
+            <input id="x-slider" type="range" min="5" max="200" step="1" value="5" orient="vertical">
+            <p id="y-reader">y:5</p>
+            <input id="y-slider" type="range" min="5" max="200" step="1" value="5" orient="vertical">
+            <button id="go-button">forth!</button>
+            <button id="speed-button"><img src='speed12.png' id="speed-icon"></button>
+        </div>
+        <div id="tab-div"><img src='tab-icon-forwards.png' id="tab-icon"></div>
+    </div>
+</body>
+
+</html>
