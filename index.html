@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <link href="knightsTour.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <script src="knightsTour.js" type="module"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <!-- <link rel="icon" href="lotus.png"> -->
+    <link rel="icon" href="knight-icon.png">
     <title>knightsTour</title>
 </head>
 
@@ -22,8 +22,12 @@
             If you want to try the tour yourself, see this link:
             <a href="https://www.maths-resources.com/knights/">https://www.maths-resources.com/knights/</a>.
         </p>
-        <button id="flavour-text-button"></button>
-        <p id="flavour-text" class="flavour-text-invisible">Sir Tristram wants to visit his paramour, Isolde; but her husband, the evil King Mark,
+        <div id="flavour-button-div">
+            <button id="flavour-text-button"></button>
+            <p>flavour-text</p>
+        </div>
+        <p id="flavour-text" class="flavour-text-invisible">Sir Tristram wants to visit his paramour, La Beale Isoud;
+            but her husband, the evil King Mark,
             orders that he can only see her if he passes through all of King Mark's fiefs once and only once on the way,
             and that on a hobbled horse that will not move in a straight line. Can Sir Tristram achieve this gallant
             feat
@@ -36,10 +40,9 @@
             <p id="y-reader">y:5</p>
             <input id="y-slider" type="range" min="5" max="200" step="1" value="5" orient="vertical">
             <button id="go-button">forth!</button>
-            <button id="speed-button"><img src='speed12.png' id="speed-icon"></button>
+            <button id="speed-button"><img src='speed1.png' id="speed-icon"></button>
         </div>
         <div id="tab-div"><img src='tab-icon-forwards.png' id="tab-icon"></div>
     </div>
 </body>
-
 </html>
