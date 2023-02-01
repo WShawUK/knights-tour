@@ -1,0 +1,198 @@
+body {
+    background-color: rgb(100, 100, 100);
+    display: grid;
+    font-family: Ubuntu;
+}
+
+#canvas-div {
+    position: relative;
+    /* border: 1px blue solid; */
+    margin: auto;
+}
+
+#board-canvas {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#main-canvas {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#explanation-div {
+    margin: 20px auto 20px auto;
+    border: 1px black solid;
+    border-radius: 30px;
+    width: 60%;
+}
+
+#explanation-text {
+    margin: auto;
+    padding: 10px;
+    width: 95%;
+}
+
+#flavour-button-div {
+    margin-left: 10%;
+    margin-right: 50%;
+    width: max-content;
+    display: flex;
+}
+
+#flavour-text-button {
+    width: 20px;
+    height: 20px;
+    border: 1px green solid;
+    background-color: transparent;
+    background-image: url("flavour-icon-plus.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#flavour-button-div p {
+    color: green;
+    margin: 0px;
+    align-self: flex-start;
+    margin-left: 5px;
+}
+
+#flavour-text {
+    color: green;
+    margin: auto;
+    padding: 10px;
+    width: 95%;
+    transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+}
+
+.flavour-text-invisible {
+    height: 0px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#container-div {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    height: 5rem;
+
+    transition: 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.is-slid-out {
+    position: fixed;
+    left: 0px;
+    top: 20%;
+}
+
+.is-not-slid-out {
+    position: fixed;
+    left: -155px;
+    top: 20%;
+}
+
+#options-div {
+    background-color: rgb(120, 120, 120);
+    border: 2px black solid;
+    border-right: 0px;
+    width: 150px;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+}
+
+#x-reader {
+    width: 30px;
+    grid-row: 1/2;
+    padding: 5px;
+}
+
+#y-reader {
+    width: 30px;
+    grid-row: 1/2;
+    padding: 5px;
+}
+
+
+#options-div input {
+    margin: auto;
+    grid-row: 2/4;
+    height: 15rem;
+    background-color: rgb(100, 100, 100);
+    width: 5px;
+    border-radius: 5px;
+    -webkit-appearance: slider-vertical;
+}
+
+
+#options-div input::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgb(80, 80, 80);
+    cursor: pointer;
+}
+
+
+#go-button {
+    border: outset 1px grey;
+    background-color: transparent;
+    grid-row: 2/3;
+    width: 3rem;
+    height: 2rem;
+    margin: auto;
+    margin-right: 10px;
+}
+
+#speed-button {
+    background-color: transparent;
+    border: outset 1px grey;
+    grid-row: 3/4;
+    width: 3rem;
+    height: 2rem;
+    margin: auto;
+    margin-right: 10px;
+}
+
+#options-div button:active {
+    position: relative;
+    bottom: 1px;
+    right: 1px;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+}
+
+#speed-icon {
+    padding-top: 2px;
+    width: 80%;
+}
+
+
+#tab-div {
+    padding-left: 5px;
+    display: inline-grid;
+    place-content: center;
+    background-color: rgb(120, 120, 120);
+    width: 20px;
+    border: 2px black solid;
+    border-left: 0px;
+    border-radius: 0px 20px 20px 0px;
+}
+
+#tab-div:hover {
+    
+    background: linear-gradient(.25turn, rgb(120, 120, 120) 20%, rgb(140, 140, 140));
+    transition: 0.2s;
+}
+
+#tab-icon {
+    width: 20px;
+    height: 15rem;
+    margin: auto;
+    transition: 0.3s;
+}
