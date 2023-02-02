@@ -40,11 +40,11 @@ let animationInProgress = false
 
 let animationSpeed = 1
 
-const drawBoard = function() {
+const drawBoard = function () {
     xSliderValue = Number(xSlider.value)
     ySliderValue = Number(ySlider.value)
 
-    if (canvasHeight / ySliderValue < canvasWidth / xSliderValue){
+    if (canvasHeight / ySliderValue < canvasWidth / xSliderValue) {
         squareSize = canvasHeight / ySliderValue
         boardWidth = squareSize * xSliderValue
         boardHeight = squareSize * ySliderValue
@@ -62,24 +62,24 @@ const drawBoard = function() {
     mainCtx.clearRect(0, 0, canvasWidth, canvasHeight)
     boardCtx.clearRect(0, 0, canvasWidth, canvasHeight)
     boardCtx.beginPath()
-    
+
     //draw squares
     boardCtx.globalAlpha = 1
     boardCtx.fillStyle = 'rgb(205, 205, 205)'
     boardCtx.fillRect(boardWidthStartingPoint, boardHeightStartingPoint, boardWidth, boardHeight)
     boardCtx.fillStyle = 'rgb(50, 50, 50)'
     let whiteSquare
-    for (let a = 0; a < xSliderValue; a ++){
-        if (a % 2 != 0){
+    for (let a = 0; a < xSliderValue; a++) {
+        if (a % 2 != 0) {
             whiteSquare = true
         }
         else {
             whiteSquare = false
         }
         let squareStartX = boardWidthStartingPoint + (squareSize * a)
-        for (let b = 0; b < ySliderValue; b ++){
+        for (let b = 0; b < ySliderValue; b++) {
             let squareStartY = boardHeightStartingPoint + (squareSize * b)
-            if (whiteSquare){
+            if (whiteSquare) {
                 boardCtx.fillRect(squareStartX, squareStartY, squareSize, squareSize)
             }
             whiteSquare = !whiteSquare
@@ -91,28 +91,28 @@ const drawBoard = function() {
 
 knight.addEventListener('load', drawBoard)
 
-window.addEventListener("resize", (event) => {  // resize canvas and redraw board
-    canvasWidth = (Math.floor(window.innerWidth / 100) * 100) - 100
-    canvasHeight = (Math.floor(window.innerHeight / 100) * 100) - 100
-    
-    canvasDiv.style.width = `${canvasWidth}px`
-    canvasDiv.style.height = `${canvasHeight}px`
-    boardCanvas.width = canvasWidth
-    boardCanvas.height = canvasHeight
-    mainCanvas.width = canvasWidth
-    mainCanvas.height = canvasHeight
-    
-    if (animationInProgress){
-        animationInProgress = false
-        setTimeout(drawBoard, 60)
-    }
-    else {
-        drawBoard()
-    }
-})
+// window.addEventListener("resize", (event) => {  // resize canvas and redraw board
+//     canvasWidth = (Math.floor(window.innerWidth / 100) * 100) - 100
+//     canvasHeight = (Math.floor(window.innerHeight / 100) * 100) - 100
+
+//     canvasDiv.style.width = `${canvasWidth}px`
+//     canvasDiv.style.height = `${canvasHeight}px`
+//     boardCanvas.width = canvasWidth
+//     boardCanvas.height = canvasHeight
+//     mainCanvas.width = canvasWidth
+//     mainCanvas.height = canvasHeight
+
+//     if (animationInProgress){
+//         animationInProgress = false
+//         setTimeout(drawBoard, 60)
+//     }
+//     else {
+//         drawBoard()
+//     }
+// })
 
 xSlider.addEventListener('change', (event) => {
-    if (animationInProgress){
+    if (animationInProgress) {
         animationInProgress = false
         setTimeout(drawBoard, 60)
     }
@@ -123,7 +123,7 @@ xSlider.addEventListener('change', (event) => {
 })
 
 ySlider.addEventListener('change', (event) => {
-    if (animationInProgress){
+    if (animationInProgress) {
         animationInProgress = false
         setTimeout(drawBoard, 60)
     }
@@ -142,7 +142,7 @@ speedButton.addEventListener('click', (event) => {
 
 let optionsAreSlidOut = false
 document.getElementById('tab-div').addEventListener('click', (event) => {
-    if (optionsAreSlidOut){
+    if (optionsAreSlidOut) {
         document.getElementById('container-div').classList.remove('is-slid-out')
         document.getElementById('container-div').classList.add('is-not-slid-out')
         document.getElementById('tab-icon').src = 'tab-icon-forwards.png'
@@ -158,7 +158,7 @@ document.getElementById('tab-div').addEventListener('click', (event) => {
 let flavourTextIsHidden = true
 document.getElementById('flavour-text').style.visibility = 'hidden'
 document.getElementById('flavour-text-button').addEventListener('click', (event) => {
-    if (flavourTextIsHidden){
+    if (flavourTextIsHidden) {
         document.getElementById('flavour-text').classList.remove('flavour-text-invisible')
         document.getElementById('flavour-text').style.visibility = 'visible'
         document.getElementById('flavour-text-button').style.backgroundImage = 'url("flavour-icon-minus.png")'
@@ -264,8 +264,8 @@ function completeTour(totalX, totalY) {
     return false
 } // end of function
 
-const performTour = function() {
-    
+const performTour = function () {
+
     drawBoard()
 
     console.log('performing tour')
@@ -290,15 +290,15 @@ const performTour = function() {
     let currentPos = [0, 0]
     let nextPos = path.shift()
 
-    const animatePath = function() {
-        if (animationCount > animationSpeedObj[animationSpeedCopy]){ // move onto next position
+    const animatePath = function () {
+        if (animationCount > animationSpeedObj[animationSpeedCopy]) { // move onto next position
             animationSpeedCopy = animationSpeed
             boardCtx.globalAlpha = 0.5
             boardCtx.fillRect(boardWidthStartingPoint + (squareSize * nextPos[0]), boardHeightStartingPoint + (squareSize * nextPos[1]), squareSize, squareSize)
             boardCtx.globalAlpha = 1
             animationCount = 0
             currentPos = nextPos
-            if (!path.length){ // after completing the final move
+            if (!path.length) { // after completing the final move
                 boardCtx.stroke()
                 boardCtx.stroke()
                 boardCtx.stroke()
@@ -320,18 +320,18 @@ const performTour = function() {
         mainCtx.drawImage(knight, newStepX, newStepY, squareSize, squareSize)
         boardCtx.lineTo(newStepX + (squareSize / 2), newStepY + (squareSize / 2))
         boardCtx.stroke()
-        
+
         animationCount += 1
 
-        if (!animationInProgress){
+        if (!animationInProgress) {
             animationInProgress = false
             return
         }
-        if (animationSpeed >= 1){
+        if (animationSpeed >= 1) {
             window.requestAnimationFrame(animatePath)
         }
         else {
-            setTimeout((f) => {window.requestAnimationFrame(animatePath)}, 50)
+            setTimeout((f) => { window.requestAnimationFrame(animatePath) }, 50)
         }
     }
 
@@ -344,13 +344,11 @@ const performTour = function() {
 }
 
 goButton.addEventListener('click', (event) => {
-    if (animationInProgress){
+    if (animationInProgress) {
         animationInProgress = false
         setTimeout(performTour, 60)
     }
     else {
         performTour()
     }
-    
-    
 })
