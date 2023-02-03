@@ -156,7 +156,6 @@ const tabDivMovement = function() {
 }
 document.getElementById('tab-div').addEventListener('mousedown', tabDivMovement)
 document.getElementById('tab-div').addEventListener('touch', tabDivMovement)
-document.getElementById('tab-div').addEventListener('touchstart', tabDivMovement)
 
 let flavourTextIsHidden = true
 document.getElementById('flavour-text').style.visibility = 'hidden'
