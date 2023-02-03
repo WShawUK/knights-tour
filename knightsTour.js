@@ -155,6 +155,7 @@ const tabDivMovement = function() {
     optionsAreSlidOut = !optionsAreSlidOut
 }
 document.getElementById('tab-div').addEventListener('mousedown', tabDivMovement)
+document.getElementById('tab-div').addEventListener('touch', tabDivMovement)
 document.getElementById('tab-div').addEventListener('touchstart', tabDivMovement)
 
 let flavourTextIsHidden = true
