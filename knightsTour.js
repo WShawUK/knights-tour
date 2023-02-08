@@ -133,6 +133,16 @@ ySlider.addEventListener('change', (event) => {
     document.getElementById('y-reader').innerHTML = `y:${ySlider.value}`
 })
 
+goButton.addEventListener('click', (event) => {
+    if (animationInProgress) {
+        animationInProgress = false
+        setTimeout(performTour, 60)
+    }
+    else {
+        performTour()
+    }
+})
+
 speedButton.addEventListener('click', (event) => {
     animationSpeed += 1
     animationSpeed %= 4
@@ -140,7 +150,7 @@ speedButton.addEventListener('click', (event) => {
     speedButton.firstElementChild.src = `speed${animationSpeed}.png`
 })
 
-let optionsAreSlidOut = false
+let optionsAreSlidOut = true
 const tabDivMovement = function() {
     if (optionsAreSlidOut) {
         document.getElementById('container-div').classList.remove('is-slid-out')
@@ -155,7 +165,7 @@ const tabDivMovement = function() {
     optionsAreSlidOut = !optionsAreSlidOut
 }
 document.getElementById('tab-div').addEventListener('mousedown', tabDivMovement)
-document.getElementById('tab-div').addEventListener('touch', tabDivMovement)
+document.getElementById('tab-div').addEventListener('touchstart', tabDivMovement)
 
 let flavourTextIsHidden = true
 document.getElementById('flavour-text').style.visibility = 'hidden'
@@ -345,12 +355,3 @@ const performTour = function () {
     window.requestAnimationFrame(animatePath)
 }
 
-goButton.addEventListener('click', (event) => {
-    if (animationInProgress) {
-        animationInProgress = false
-        setTimeout(performTour, 60)
-    }
-    else {
-        performTour()
-    }
-})
