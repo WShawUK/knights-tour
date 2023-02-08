@@ -151,7 +151,7 @@ speedButton.addEventListener('click', (event) => {
 })
 
 let optionsAreSlidOut = true
-const tabDivMovement = function() {
+document.getElementById('tab-div').addEventListener('click', (event) => {
     if (optionsAreSlidOut) {
         document.getElementById('container-div').classList.remove('is-slid-out')
         document.getElementById('container-div').classList.add('is-not-slid-out')
@@ -163,9 +163,7 @@ const tabDivMovement = function() {
         document.getElementById('tab-icon').src = 'tab-icon-backwards.png'
     }
     optionsAreSlidOut = !optionsAreSlidOut
-}
-document.getElementById('tab-div').addEventListener('mousedown', tabDivMovement)
-document.getElementById('tab-div').addEventListener('touchstart', tabDivMovement)
+})
 
 let flavourTextIsHidden = true
 document.getElementById('flavour-text').style.visibility = 'hidden'
@@ -354,4 +352,5 @@ const performTour = function () {
 
     window.requestAnimationFrame(animatePath)
 }
+
 
